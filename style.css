@@ -1,0 +1,905 @@
+/* =========================================
+   CONFIGURACIÓN GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    min-height: 100vh;
+
+    padding: 25px 20px 40px;
+
+    color: #3f2854;
+
+    overflow-x: hidden;
+
+
+    /* =====================================
+       🏰 CASTILLO COMO FONDO
+    ===================================== */
+
+    background-image:
+
+        linear-gradient(
+            rgba(238, 216, 250, 0.42),
+            rgba(220, 190, 238, 0.48)
+        ),
+
+        url("imagenes/castillo.jpg");
+
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+
+/* =========================================
+   DECORACIÓN SUPERIOR
+========================================= */
+
+.decoracion-superior {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    height: 175px;
+
+    margin: 0 auto;
+
+}
+
+
+
+/* =========================================
+   ☀️ SOL
+========================================= */
+
+.sol {
+
+    position: absolute;
+
+    width: 125px;
+
+    height: 125px;
+
+    object-fit: contain;
+
+    top: 5px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+
+
+    filter:
+        drop-shadow(
+            0 5px 12px
+            rgba(255, 190, 50, 0.55)
+        );
+
+}
+
+
+
+/* =========================================
+   🏮 FAROLES
+========================================= */
+
+.farol {
+
+    position: absolute;
+
+    width: 145px;
+
+    height: 175px;
+
+    object-fit: contain;
+
+    z-index: 5;
+
+
+    filter:
+        drop-shadow(
+            0 8px 12px
+            rgba(60, 30, 80, 0.35)
+        );
+
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.farol:hover {
+
+    transform:
+        translateY(-6px)
+        scale(1.05);
+
+}
+
+
+
+/* FAROL IZQUIERDO */
+
+.farol-izquierdo {
+
+    left: 3%;
+
+    top: 0;
+
+}
+
+
+
+/* FAROL DERECHO */
+
+.farol-derecho {
+
+    right: 3%;
+
+    top: 0;
+
+}
+
+
+
+/* =========================================
+   ENCABEZADO
+========================================= */
+
+.encabezado {
+
+    width: 95%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 25px;
+
+    padding: 20px 25px;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 35px;
+
+
+    background:
+        rgba(255, 250, 255, 0.90);
+
+
+    border:
+        3px solid
+        rgba(166, 111, 193, 0.55);
+
+
+    border-radius: 30px;
+
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(69, 35, 85, 0.28);
+
+
+    backdrop-filter:
+        blur(5px);
+
+}
+
+
+
+/* =========================================
+   FOTO DE NOVIAS
+========================================= */
+
+.foto-novias {
+
+    flex-shrink: 0;
+
+}
+
+
+.foto-novias img {
+
+    width: 165px;
+
+    height: 165px;
+
+
+    object-fit: cover;
+
+
+    border-radius: 50%;
+
+
+    border:
+        5px solid #c59bd8;
+
+
+    box-shadow:
+
+        0 7px 18px
+        rgba(70, 35, 90, 0.30);
+
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.foto-novias img:hover {
+
+    transform:
+        scale(1.05)
+        rotate(2deg);
+
+}
+
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.titulo {
+
+    text-align: center;
+
+    flex: 1;
+
+}
+
+
+h1 {
+
+    font-size: 42px;
+
+    color: #633b78;
+
+    margin-bottom: 8px;
+
+
+    text-shadow:
+
+        0 2px 5px
+        rgba(99, 59, 120, 0.20);
+
+}
+
+
+h2 {
+
+    font-size: 29px;
+
+    color: #51355e;
+
+    margin-bottom: 8px;
+
+    font-weight: normal;
+
+}
+
+
+.titulo p {
+
+    font-size: 17px;
+
+    color: #725f7c;
+
+}
+
+
+
+/* =========================================
+   👸 RAPUNZEL
+========================================= */
+
+.foto-rapunzel {
+
+    flex-shrink: 0;
+
+}
+
+
+.foto-rapunzel img {
+
+    width: 145px;
+
+    height: 145px;
+
+
+    object-fit: cover;
+
+
+    border-radius: 50%;
+
+
+    border:
+        4px solid #c59bd8;
+
+
+    box-shadow:
+
+        0 7px 18px
+        rgba(70, 35, 90, 0.25);
+
+}
+
+
+
+/* =========================================
+   FRASE
+========================================= */
+
+.frase {
+
+    width: fit-content;
+
+    max-width: 700px;
+
+    margin: 0 auto 25px;
+
+    padding: 12px 25px;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+
+    background:
+        rgba(255, 250, 255, 0.82);
+
+
+    border-radius: 50px;
+
+
+    box-shadow:
+
+        0 6px 18px
+        rgba(70, 35, 90, 0.18);
+
+
+    backdrop-filter:
+        blur(4px);
+
+}
+
+
+.frase p {
+
+    color: #684574;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    font-style: italic;
+
+}
+
+
+.frase span {
+
+    font-size: 20px;
+
+}
+
+
+
+/* =========================================
+   📚 HORARIO
+========================================= */
+
+.horario {
+
+    width: 100%;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+
+    display: grid;
+
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+
+    gap: 16px;
+
+}
+
+
+
+/* =========================================
+   DÍAS
+========================================= */
+
+.dia {
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+
+    border:
+        2px solid
+        rgba(178, 132, 201, 0.50);
+
+
+    border-radius: 22px;
+
+
+    padding: 17px;
+
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(75, 40, 95, 0.22);
+
+
+    backdrop-filter:
+        blur(5px);
+
+
+    transition:
+
+        transform 0.3s ease,
+
+        box-shadow 0.3s ease;
+
+}
+
+
+.dia:hover {
+
+    transform:
+        translateY(-6px);
+
+
+    box-shadow:
+
+        0 16px 30px
+        rgba(75, 40, 95, 0.30);
+
+}
+
+
+
+/* =========================================
+   NOMBRE DEL DÍA
+========================================= */
+
+.dia h3 {
+
+    text-align: center;
+
+
+    color: #ffffff;
+
+
+    font-size: 21px;
+
+
+    margin-bottom: 15px;
+
+
+    padding: 10px 5px;
+
+
+    border-radius: 13px;
+
+
+    background:
+        linear-gradient(
+            135deg,
+            #704583,
+            #a875bd
+        );
+
+
+    box-shadow:
+
+        0 4px 10px
+        rgba(85, 45, 105, 0.20);
+
+}
+
+
+
+/* =========================================
+   MATERIAS
+========================================= */
+
+.materia {
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #fbf4ff,
+            #eee0f6
+        );
+
+
+    border-radius: 15px;
+
+
+    padding: 14px;
+
+
+    margin-bottom: 13px;
+
+
+    border-left:
+        5px solid #a875bd;
+
+
+    box-shadow:
+
+        0 5px 12px
+        rgba(100, 65, 120, 0.12);
+
+
+    transition:
+
+        transform 0.25s ease,
+
+        box-shadow 0.25s ease;
+
+}
+
+
+.materia:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.materia:hover {
+
+    transform:
+        scale(1.025);
+
+
+    box-shadow:
+
+        0 8px 18px
+        rgba(100, 65, 120, 0.20);
+
+}
+
+
+
+/* =========================================
+   NOMBRE DE MATERIA
+========================================= */
+
+.materia h4 {
+
+    color: #57336b;
+
+
+    font-size: 16px;
+
+
+    line-height: 1.3;
+
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* =========================================
+   INFORMACIÓN
+========================================= */
+
+.materia p {
+
+    font-family: Arial, sans-serif;
+
+
+    font-size: 12.5px;
+
+
+    color: #725f7c;
+
+
+    margin-top: 6px;
+
+
+    line-height: 1.4;
+
+}
+
+
+
+/* =========================================
+   DECORACIÓN INFERIOR
+========================================= */
+
+.decoracion-inferior {
+
+    width: 100%;
+
+    max-width: 1000px;
+
+
+    margin: 35px auto 0;
+
+
+    display: flex;
+
+
+    justify-content:
+        space-around;
+
+
+    align-items: center;
+
+}
+
+
+.decoracion-inferior img {
+
+    width: 120px;
+
+    height: 160px;
+
+
+    object-fit: contain;
+
+
+    filter:
+
+        drop-shadow(
+            0 7px 12px
+            rgba(60, 30, 80, 0.30)
+        );
+
+}
+
+
+.corazon {
+
+    font-size: 45px;
+
+    animation:
+        latido 1.5s infinite;
+
+}
+
+
+@keyframes latido {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+            scale(1.15);
+
+    }
+
+}
+
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1150px) {
+
+    .horario {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .encabezado {
+
+        max-width: 900px;
+
+    }
+
+}
+
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+    body {
+
+        padding:
+            20px 12px;
+
+        background-attachment:
+            scroll;
+
+    }
+
+
+    .decoracion-superior {
+
+        height: 135px;
+
+    }
+
+
+    .sol {
+
+        width: 85px;
+
+        height: 85px;
+
+    }
+
+
+    .farol {
+
+        width: 90px;
+
+        height: 120px;
+
+    }
+
+
+    .farol-izquierdo {
+
+        left: -8px;
+
+    }
+
+
+    .farol-derecho {
+
+        right: -8px;
+
+    }
+
+
+    .encabezado {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 20px 15px;
+
+    }
+
+
+    .foto-novias img {
+
+        width: 140px;
+
+        height: 140px;
+
+    }
+
+
+    .foto-rapunzel img {
+
+        width: 110px;
+
+        height: 110px;
+
+    }
+
+
+    h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    h2 {
+
+        font-size: 23px;
+
+    }
+
+
+    .frase {
+
+        max-width: 95%;
+
+        padding:
+            10px 15px;
+
+    }
+
+
+    .frase p {
+
+        font-size: 13px;
+
+    }
+
+
+    .horario {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 15px;
+
+    }
+
+
+    .dia {
+
+        padding: 17px;
+
+    }
+
+
+    .materia h4 {
+
+        font-size: 16px;
+
+    }
+
+
+    .decoracion-inferior img {
+
+        width: 75px;
+
+        height: 105px;
+
+    }
+
+}
